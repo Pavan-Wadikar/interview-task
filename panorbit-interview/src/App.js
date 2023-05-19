@@ -38,7 +38,7 @@ let api='https://panorbit.in/api/users.json'
 function App() {
   
   const { data, status } = useQuery("users", fetchData);
-  
+  console.log(data);
   return (
   <div className="App ">
     <QueryClientProvider client={queryClient} >
