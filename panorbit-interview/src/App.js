@@ -1,9 +1,21 @@
-import LandingPage from './components/LandingPage';
+// Imports
 import './App.css';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import { useEffect,useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
+import LandingPage from './components/LandingPage';
+
+import Profile from './components/Profile'
 
 const queryClient = new QueryClient()
+
+
 
 
 let api='https://panorbit.in/api/users.json'
@@ -28,18 +40,26 @@ function App() {
   const { data, status } = useQuery("users", fetchData);
   
   return (
-    <div className="App flex justify-center items-center">
+  <div className="App ">
     <QueryClientProvider client={queryClient} >
-   {status === "error" && <p>Error fetching data</p>}
-      {status === "loading" && <p>Fetching data...</p>}
-      {status === "success" && (
-        <div className='mx-20'>
-          <LandingPage data={data.users}/>      
-        </div>
-  )
-}
-</QueryClientProvider>
-</div>
+        <Router>
+          <Routes>
+          {status === "success" && (
+        
+            <Route exact path='/' element={<LandingPage data={data.users}/>}/>
+                  
+            )
+          }
+          {status==="success" &&(
+            
+            <Route path='/profile' element={<Profile allData={data.users}/>} />
+
+            
+          )}
+          </Routes>
+        </Router>
+    </QueryClientProvider>
+  </div>
 
   )
 }
