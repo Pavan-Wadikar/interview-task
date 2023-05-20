@@ -1,5 +1,5 @@
 import React from 'react'
-
+// Component to Display Coming Soon
 const ComingSoon = () => {
   return (
     <div>

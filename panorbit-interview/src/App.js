@@ -17,7 +17,7 @@ const queryClient = new QueryClient()
 
 
 
-
+// Fetching Of Api
 let api='https://panorbit.in/api/users.json'
     async function fetchData(){
       try {
@@ -36,12 +36,13 @@ let api='https://panorbit.in/api/users.json'
 
 
 function App() {
-  
+  // Getting Data object from api
   const { data, status } = useQuery("users", fetchData);
   console.log(data);
   return (
   <div className="App ">
     <QueryClientProvider client={queryClient} >
+    {/* Router */}
         <Router>
           <Routes>
           {status === "success" && (

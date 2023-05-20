@@ -9,7 +9,7 @@ const LandingPage =  ({data}) => {
   
    
    let userData=()=>{
-    
+    // Landing Page Data Mapping and Sending data selected to Profile Component
      let listData=data.map((user)=>{
        return <li key={user.id} ><Link to='/profile' state={{from:{user}}}><button className='flex flex-row justify-start items-start gap-4 my-5 btn btn-ghost' ><RoundImg src={user.profilepicture} height={20} width={20} />{user.name}</button></Link></li>
 
