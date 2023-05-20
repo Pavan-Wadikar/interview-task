@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import React  from 'react'
 import RoundImg from './RoundImg';
 import { Link } from 'react-router-dom';
-import Profile from './Profile';
+import "../landingPage.css"
  
 
 
@@ -20,17 +19,20 @@ const LandingPage =  ({data}) => {
    }  
     
   return (
-    <div className='flex justify-center items-center mt-20  background'>
-     
+    <div className='background'>
+    
+    <div className='flex justify-center items-center mt-20 '>
+
       <div className="card border flex justify-start mt-20 items-start  w-80 h-80   bg-base-100 shadow-xl overflow-scroll">
         <div className="card-body flex place-items-center  ">
           <h2 className="card-title bg-slate-200">Select An Account</h2>
           
-        <div className="card-body flex justify-start ">
+        <div className="ml-5 card-body flex justify-start ">
         <ul>{userData()}</ul>
     </div>
   </div>
 </div>
+    </div>
     </div>
   )
 }

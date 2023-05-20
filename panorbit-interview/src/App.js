@@ -1,7 +1,7 @@
 // Imports
 import './App.css';
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
-import { useEffect,useState } from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,

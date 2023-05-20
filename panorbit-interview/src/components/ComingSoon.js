@@ -2,7 +2,11 @@ import React from 'react'
 
 const ComingSoon = () => {
   return (
-    <div>ComingSoon</div>
+    <div>
+        <h1 className='text-6xl text-slate-400 font-extrabold'>
+            Coming Soon
+        </h1>
+    </div>
   )
 }
 

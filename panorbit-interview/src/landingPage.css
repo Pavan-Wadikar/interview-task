@@ -1,3 +1,8 @@
 .background{
-    background-image: url("backgroundCanva.png");
+    background-image: url("../public/backgroundCanva.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    
+    
 }
